@@ -66,7 +66,6 @@ do
 	if [[ "${result}" != ""  ]] 
 	then
 		arg_path="${arg%/*}"
-		mkdir ${arg_path}/
 	else	
 		arg_path="."
 	fi
