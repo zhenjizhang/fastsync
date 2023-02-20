@@ -1,0 +1,23 @@
+#!/bin/awk -f
+#运行前
+BEGIN {
+    swtich = 0
+}
+#运行中
+{
+    if ($0 == "") {
+        swtich += 1
+    } else {
+            gsub(/modified:/, "")
+            gsub(/ /, "")
+            gsub(/\t/, "")
+        if ((swtich == 1 || swtich == 3) && ($0 !~ /localSync.sh|remoteSync.sh|gitawk/)) {
+            print
+        }
+    }
+
+}
+#运行后
+# END {
+#     printf "---------------------------------------------\n"
+# }
