@@ -11,7 +11,7 @@ BEGIN {
             gsub(/modified:/, "")
             gsub(/ /, "")
             gsub(/\t/, "")
-        if ((swtich == 1 || swtich == 3) && ($0 !~ /localSync.sh|remoteSync.sh|gitawk/)) {
+        if ((swtich % 2 == 1) && ($0 !~ /localSync.sh|remoteSync.sh|gitawk/)) {
             print
         }
     }
