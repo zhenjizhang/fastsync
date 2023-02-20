@@ -77,6 +77,7 @@ do
 	fi
 	if [[ $arg =~ /$ ]]
 	then 
+		mkdir -p ${arg_path}
 		echo "mv ${TMP_PATH}/${arg}/* ${arg_path}/"
 		mv ${TMP_PATH}/${arg}/* ${arg_path}/
 	else 
