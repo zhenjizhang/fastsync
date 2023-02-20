@@ -14,7 +14,7 @@ sed -i '' "s/remote-host-addr/${REMOTE_HOST}/g" fastsync/resource/remoteSync.sh
 sed -i '' "s/remote-git-path/${REMOTE_GIT_PATH}/g" fastsync/resource/remoteSync.sh
 mv fastsync/resource/* .git/
 
-if [ `grep -c "fastsync" ~/.zshrc` -eq '0' ]; then
+if [ `grep -c "sh .git/localSync.sh" ~/.zshrc` -eq '0' ]; then
     echo "alias fastsync='sh .git/localSync.sh'" >> ~/.zshrc
 fi
 rm -rf fastsync
