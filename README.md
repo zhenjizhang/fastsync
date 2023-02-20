@@ -5,7 +5,7 @@
 
 运行 sh fastsync.sh {your-tmp-branch} {remote-host} {remote-git-path}
 
-sh fastsync.sh zzj-TestBranch xxx.xxx.com "~\/data\/fastsync"
+sh fastsync.sh zzj-TestBranch jumper xxx.xxx.com "~\/data\/fastsync"
 
 注意：不支持 rename delete 等后的同步，其他隐藏 bug 暂未发现，欢迎补充
 
