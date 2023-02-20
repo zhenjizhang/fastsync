@@ -3,7 +3,7 @@
 # 用于把代码同步到线上机器
 
 LOCAL_BRANCH=`git status | head -1 | awk -F' ' '{print $3}'`
-GIT_BRANCH=[暂存代码分支名称]
+GIT_BRANCH="your-tmp-branch"
 COMMIT_ID=`git log | head -1 | awk -F' ' '{print $2}'`
 PARAM1=$1
 PARAMS=$@
