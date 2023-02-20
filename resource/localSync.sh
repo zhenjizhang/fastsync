@@ -70,7 +70,7 @@ do
 		arg_path="."
 	fi
 	echo "mv ${TMP_PATH}/${arg} ${arg_path}/"
-	mv ${TMP_PATH}/${arg} $arg_path}/
+	mv ${TMP_PATH}/${arg} ${arg_path}/
 	echo "mv $arg done"
 done
 
