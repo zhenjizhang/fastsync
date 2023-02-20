@@ -29,10 +29,17 @@ git checkout -b ${GIT_BRANCH}
 
 for arg in ${PARAM_ARR[@]}
 do
-	echo "mkdir -p ${TMP_PATH}/${arg%/*}"
-	mkdir -p ${TMP_PATH}/${arg%/*}
-	echo "cp $arg ${TMP_PATH}/${arg%/*}/"
-	cp $arg ${TMP_PATH}/${arg%/*}/
+	arg_path=""
+	result=$(echo $arg | grep "\/")
+	if [[ "${result}" != ""  ]] 
+	then
+		arg_path="${arg%/*}"
+	else	
+		arg_path="."
+	echo "mkdir -p ${TMP_PATH}/${arg_path}"
+	mkdir -p ${TMP_PATH}/${arg_path}
+	echo "cp $arg ${TMP_PATH}/${arg_path}/"
+	cp $arg ${TMP_PATH}/${arg_path}/
 	echo "git add $arg"
 	git add $arg
 	echo "$arg done"
@@ -53,6 +60,13 @@ git branch -D ${GIT_BRANCH}
 
 for arg in ${PARAM_ARR[@]}
 do
+	arg_path=""
+	result=$(echo $arg | grep "\/")
+	if [[ "${result}" != ""  ]] 
+	then
+		arg_path="${arg%/*}"
+	else	
+		arg_path="."
 	echo "mv ${TMP_PATH}/${arg} ${arg%/*}/"
 	mkdir ${arg%/*}/
 	mv ${TMP_PATH}/${arg} ${arg%/*}/
