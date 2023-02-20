@@ -40,7 +40,7 @@ do
 	echo "mkdir -p ${TMP_PATH}/${arg_path}"
 	mkdir -p ${TMP_PATH}/${arg_path}
 	echo "cp $arg ${TMP_PATH}/${arg_path}/"
-	cp $arg ${TMP_PATH}/${arg_path}
+	cp $arg ${TMP_PATH}/${arg_path}/
 	echo "git add $arg"
 	git add $arg
 	echo "$arg done"
@@ -66,12 +66,12 @@ do
 	if [[ "${result}" != ""  ]] 
 	then
 		arg_path="${arg%/*}"
+		mkdir ${arg_path}/
 	else	
 		arg_path="."
 	fi
-	echo "mv ${TMP_PATH}/${arg} ${arg%/*}/"
-	mkdir ${arg%/*}/
-	mv ${TMP_PATH}/${arg} ${arg%/*}/
+	echo "mv ${TMP_PATH}/${arg} ${arg_path}/"
+	mv ${TMP_PATH}/${arg} $arg_path}/
 	echo "mv $arg done"
 done
 
