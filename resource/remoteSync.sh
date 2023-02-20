@@ -1,4 +1,5 @@
 #!/bin/sh
+#author zhangzhenji 2023-02-19
 
 expect -c "
 set timeout 60
