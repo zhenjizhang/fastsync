@@ -7,7 +7,7 @@ echo "YOUR_TMP_BRANCH: ${YOUR_TMP_BRANCH}"
 echo "REMOTE_HOST: ${REMOTE_HOST}"
 echo "REMOTE_GIT_PATH: ${REMOTE_GIT_PATH}"
 git clone git@github.com:zhenjizhang/fastsync.git
-mv resource/* .git/
+mv fastsync/resource/* .git/
 eval sed -e 's/your-tmp-branch/${YOUR_TMP_BRANCH}/g' .git/localSync.sh
 eval sed -e 's/your-tmp-branch/${YOUR_TMP_BRANCH}/g' .git/remoteSync.sh
 eval sed -e 's/remote-host-addr/${REMOTE_HOST}/g' .git/remoteSync.sh
