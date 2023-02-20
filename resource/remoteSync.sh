@@ -2,7 +2,7 @@
 
 expect -c "
 set timeout 60
-spawn ssh gwpek
+spawn ssh jumper-host
 
 expect \"PRODUCTION\" {send \" ssh-add -L\r \"}
 
