@@ -36,6 +36,7 @@ do
 		arg_path="${arg%/*}"
 	else	
 		arg_path=""
+	fi
 	echo "mkdir -p ${TMP_PATH}/${arg_path}"
 	mkdir -p ${TMP_PATH}/${arg_path}
 	echo "cp $arg ${TMP_PATH}/${arg_path}/"
@@ -67,6 +68,7 @@ do
 		arg_path="${arg%/*}"
 	else	
 		arg_path="."
+	fi
 	echo "mv ${TMP_PATH}/${arg} ${arg%/*}/"
 	mkdir ${arg%/*}/
 	mv ${TMP_PATH}/${arg} ${arg%/*}/
