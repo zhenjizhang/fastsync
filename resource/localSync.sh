@@ -41,7 +41,7 @@ do
 	mkdir -p ${TMP_PATH}/${arg_path}
 	if [[ $arg =~ /$ ]]
 	then 
-		echo "cp $arg/* ${TMP_PATH}/${arg_path}/"
+		echo "cp -r $arg/* ${TMP_PATH}/${arg_path}/"
 		cp -r $arg/* ${TMP_PATH}/${arg_path}/
 	else 
 		echo "cp $arg ${TMP_PATH}/${arg_path}/"
