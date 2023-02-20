@@ -40,7 +40,7 @@ do
 	echo "mkdir -p ${TMP_PATH}/${arg_path}"
 	mkdir -p ${TMP_PATH}/${arg_path}
 	echo "cp $arg ${TMP_PATH}/${arg_path}/"
-	cp $arg ${TMP_PATH}/${arg_path}/
+	cp $arg ${TMP_PATH}/${arg_path}
 	echo "git add $arg"
 	git add $arg
 	echo "$arg done"
