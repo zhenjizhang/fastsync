@@ -42,7 +42,7 @@ do
 	if [[ $arg =~ /$ ]]
 	then 
 		echo "cp $arg/* ${TMP_PATH}/${arg_path}/"
-		cp $arg/* ${TMP_PATH}/${arg_path}/
+		cp -r $arg/* ${TMP_PATH}/${arg_path}/
 	else 
 		echo "cp $arg ${TMP_PATH}/${arg_path}/"
 		cp $arg ${TMP_PATH}/${arg_path}/
