@@ -18,4 +18,5 @@ if [ `grep -c "fastsync" ~/.zshrc` -eq '0' ]; then
     echo "alias fastsync='sh .git/localSync.sh'" >> ~/.zshrc
 fi
 rm -rf fastsync
+rm fastsync.sh
 echo "installation is complete."
