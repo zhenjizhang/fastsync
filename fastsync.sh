@@ -7,11 +7,12 @@ echo "YOUR_TMP_BRANCH: ${YOUR_TMP_BRANCH}"
 echo "REMOTE_HOST: ${REMOTE_HOST}"
 echo "REMOTE_GIT_PATH: ${REMOTE_GIT_PATH}"
 git clone git@github.com:zhenjizhang/fastsync.git
+
+sed -i '' "s/your-tmp-branch/${YOUR_TMP_BRANCH}/g" fastsync/resource/localSync.sh
+sed -i '' "s/your-tmp-branch/${YOUR_TMP_BRANCH}/g" fastsync/resource/remoteSync.sh
+sed -i '' "s/remote-host-addr/${REMOTE_HOST}/g" fastsync/resource/remoteSync.sh
+sed -i '' "s/remote-git-path/${REMOTE_GIT_PATH}/g" fastsync/resource/remoteSync.sh
 mv fastsync/resource/* .git/
-eval sed -i -e 's/your-tmp-branch/${YOUR_TMP_BRANCH}/g' .git/localSync.sh
-eval sed -i -e 's/your-tmp-branch/${YOUR_TMP_BRANCH}/g' .git/remoteSync.sh
-eval sed -i -e 's/remote-host-addr/${REMOTE_HOST}/g' .git/remoteSync.sh
-eval sed -i -e 's/remote-git-path/${REMOTE_GIT_PATH}/g' .git/remoteSync.sh
 
 if [ `grep -c "fastsync" ~/.zshrc` -eq '0' ]; then
     echo "alias fastsync='sh .git/localSync.sh'" >> ~/.zshrc
