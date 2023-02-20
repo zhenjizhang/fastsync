@@ -35,7 +35,7 @@ do
 	then
 		arg_path="${arg%/*}"
 	else	
-		arg_path="."
+		arg_path=""
 	echo "mkdir -p ${TMP_PATH}/${arg_path}"
 	mkdir -p ${TMP_PATH}/${arg_path}
 	echo "cp $arg ${TMP_PATH}/${arg_path}/"
