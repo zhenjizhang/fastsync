@@ -3,7 +3,7 @@
 
 下载 fastsync.sh 后
 
-运行 sh fastsync.sh {your-tmp-branch} {remote-host} {remote-git-path}
+运行 sh fastsync.sh {your-tmp-branch} {jumper-host} {remote-host} {remote-git-path}
 
 sh fastsync.sh zzj-TestBranch jumper xxx.xxx.com "~\/data\/fastsync"
 
