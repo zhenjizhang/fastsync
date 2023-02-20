@@ -18,7 +18,6 @@ mv fastsync/resource/* .git/
 if [ `grep -c "sh .git/localSync.sh" ~/.zshrc` -eq '0' ]; then
     echo "alias fastsync='sh .git/localSync.sh'" >> ~/.zshrc
 fi
-source ~/.zshrc
 rm -rf fastsync
 rm fastsync.sh
 echo "installation is complete."
