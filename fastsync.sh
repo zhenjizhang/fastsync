@@ -19,7 +19,12 @@ sed -i '' "s/remote-git-path/${REMOTE_GIT_PATH}/g" fastsync/resource/remoteSync.
 mv fastsync/resource/* .git/
 
 if [ `grep -c "sh .git/localSync.sh" ~/.zshrc` -eq '0' ]; then
-    echo "alias fastsync='sh .git/localSync.sh'" >> ~/.zshrc
+    if [`grep -c "fastsync" ~/.zshrc` -eq '0']; then
+        echo "alias fastsync='sh .git/localSync.sh'" >> ~/.zshrc
+    fi
+    if [`grep -c "fs" ~/.zshrc` -eq '0']; then
+        echo "alias fs='sh .git/localSync.sh'" >> ~/.zshrc
+    fi
 fi
 rm -rf fastsync
 echo "installation is complete."
