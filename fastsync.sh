@@ -7,7 +7,7 @@ REMOTE_GIT_PATH=$3
 echo "YOUR_TMP_BRANCH: ${YOUR_TMP_BRANCH}"
 echo "REMOTE_HOST: ${REMOTE_HOST}"
 echo "REMOTE_GIT_PATH: ${REMOTE_GIT_PATH}"
-git clone git@github.com:zhenjizhang/fastsync.git
+git clone https://github.com/zhenjizhang/fastsync.git
 
 sed -i '' "s/your-tmp-branch/${YOUR_TMP_BRANCH}/g" fastsync/resource/localSync.sh
 sed -i '' "s/your-tmp-branch/${YOUR_TMP_BRANCH}/g" fastsync/resource/remoteSync.sh
