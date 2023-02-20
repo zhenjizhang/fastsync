@@ -7,5 +7,6 @@
 
 sh fastsync.sh zzj-TestBranch xxx.xxx.com "~\/data\/fastsync"
 
-#注意：不支持 rename delete 后的同步
+注意：不支持 rename delete 等后的同步，其他隐藏 bug 暂未发现，欢迎补充
+
 使用此工具可能造成代码丢失，请仔细阅读源码。使用此工具造成的代码丢失，工具提供者概不负责
